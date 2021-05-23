@@ -1,0 +1,34 @@
+command /cserver:
+    trigger:
+        execute console command "mv create %player% normal"
+        send "&cサーバーを作成しています...少し待機していてください。" to player
+        wait 3 seconds
+        send "&cサーバーが作成されました！ /goserver でtpできます。" to player
+command /goserver:
+    trigger:
+        execute console command "mvtp %player% %player%"
+        send "&6移動中..." to player
+command /deleteserver:
+    trigger:
+        if arg-1 is "confirm":
+            execute console command "mv delete %player%"
+            execute console command "mvconfirm"
+            send "&6サーバーを&c完全に&6削除しました。また遊んでね！"
+        else:
+            send "&4Realy? / 本当に削除しますか？ /deleteserver confirm"
+###command /server <text>:
+    trigger:
+        execute console command "mvtp %player% %arg 1%"
+        send "%arg 1% さんのサーバーに移動しています..."
+        
+### 上のやつは任意で。対策してないため。「###」を取れば稼働します。ですが対策をしていないので荒らされる可能性があります。気を付けてください。
+command /helps:
+    trigger:
+        send "&9≫ &6本システムの&c使い方" to player
+        send "&c/cserver &rで&cサーバーを作成&rできます。" to player
+        send "&c/goserver &rで&cサーバーにtp&rできます。" to player
+        send "&c/deleteserver &rで&cサーバーを削除&rできます。" to player
+        send "&9≫ &6前提プラグイン" to player
+        send "&cMultiverse-Core&rプラグインが&c絶対&r必要です。" to player
+        send "&9≫ &6製作者" to player
+        send "Developed by あああ" to player

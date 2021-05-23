@@ -1,0 +1,30 @@
+### 前提PL:Multiverse-Core
+### 提供:あああ
+command /hub:
+    trigger:
+        send "&cHUB&6に戻ります..." to player
+        execute console command "mvtp %player% world"
+command /lobby:
+    trigger:
+        send "&cHUB&6に戻ります..." to player
+        execute console command "mvtp %player% world"
+command /server <text> <text>:
+    trigger:
+        if arg-1 is "tp":
+            execute console command "mvtp %player% %arg 2%"
+            send "&c%arg 2%&6サーバーにてレポートしました"
+        if arg-1 is "create":
+            execute console command "mvtp create %arg 2% normal"
+            send "&c%arg 2%&6サーバーを作成しました" to player
+            add A to {test::*} "%player%さんが%arg 2%というサーバーを作ったよ "
+        if arg-1 is "showlist":
+            send "{test::*}" to player
+        if arg-1 is "delete":
+            send "&cサーバー削除要請&6は当サーバーの&cSNSまたはDiscord&6へお願いします" to player
+command /helps:
+    trigger:
+        send "&a・本システムの使い方マニュアル" to player
+        send "&c/server tp <名前>&r でそのサーバー名のサーバーにいけます" to player
+        send "&c/server create <名前>&r でそのサーバー名のサーバーを作成できます" to player
+        send "" to player
+        send "&6サーバーの削除方法はDiscordなどを参照してください" to player

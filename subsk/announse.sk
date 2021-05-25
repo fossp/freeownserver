@@ -1,0 +1,5 @@
+command /an <text>:
+    permission: op
+    trigger:
+        broadcast "&4[&cAnnounce&4] &r%arg 1% &8by %player%"
+        send "&aSeccues! / 成功しました &r「%arg 1% by %player%」" to player

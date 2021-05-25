@@ -1,0 +1,5 @@
+on left:
+    command "/sethome back"
+on join:
+    command "/home back"
+    send "&a前回サーバーから切断した場所にtpしました"

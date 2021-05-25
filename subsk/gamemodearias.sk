@@ -1,0 +1,10 @@
+command /g <text>:
+    permission: op
+    trigger:
+        execute console command "gamemode %arg 1% %player%"
+command /gm <text>:
+    trigger:
+        if arg-1 is "a":
+            execute console command "gamemode a %player%"
+        if arg-1 is "s":
+            execute console command "gamemode s %player%"
